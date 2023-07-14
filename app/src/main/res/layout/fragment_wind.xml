@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".wind.WindFragment">
+
+    <TextView
+        android:id="@+id/velocity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center"
+        android:paddingTop="30"
+        android:text="32.5"
+        android:textSize="150dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/velocity"
+        app:layout_constraintTop_toBottomOf="@+id/velocity">
+
+
+        <TextView
+            android:id="@+id/dropdown_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="20dp"
+            android:text="km/h"
+            android:textSize="15dp" />
+        <!--<Spinner
+            android:id="@+id/planets_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/dropdown_menu"/>-->
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_avg_speed"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        android:layout_width="@dimen/card_size"
+        android:layout_height="@dimen/card_size"
+        app:layout_constraintEnd_toStartOf="@+id/card_distance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        tools:layout_editor_absoluteY="301dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/avg_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AVG speed"
+
+                />
+
+            <TextView
+                android:id="@+id/avg_speed_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28.5" />
+
+            <TextView
+                android:id="@+id/avg_speed_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="km/h" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_distance"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        android:layout_width="@dimen/card_size"
+        android:layout_height="@dimen/card_size"
+        app:layout_constraintBottom_toBottomOf="@+id/card_avg_speed"
+        app:layout_constraintEnd_toStartOf="@+id/card_elevation"
+        app:layout_constraintStart_toEndOf="@+id/card_avg_speed"
+        app:layout_constraintTop_toTopOf="@+id/card_avg_speed">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Distance" />
+
+            <TextView
+                android:id="@+id/distance_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45.23" />
+
+            <TextView
+                android:id="@+id/distance_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="km" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_elevation"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        android:layout_width="@dimen/card_size"
+        android:layout_height="@dimen/card_size"
+        app:layout_constraintBottom_toBottomOf="@+id/card_distance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card_distance"
+        app:layout_constraintTop_toTopOf="@+id/card_distance">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/elevation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elevation" />
+
+            <TextView
+                android:id="@+id/elevation_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11.48" />
+
+            <TextView
+                android:id="@+id/elevation_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="m" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_max_speed"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        android:layout_width="@dimen/card_size"
+        android:layout_height="@dimen/card_size"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toStartOf="@+id/card_alert_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_distance">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/max_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Max Speed" />
+
+            <TextView
+                android:id="@+id/speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="41.75" />
+
+            <TextView
+                android:id="@+id/speed_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="km/h" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_alert_button"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        android:layout_width="@dimen/card_size"
+        android:layout_height="@dimen/card_size"
+        android:layout_marginStart="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/alert"
+        app:layout_constraintStart_toEndOf="@+id/card_max_speed"
+        app:layout_constraintTop_toTopOf="@+id/card_max_speed">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/alert_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Alert button" />
+
+            <TextView
+                android:id="@+id/alert_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Alert Icon"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/alert_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="-" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
