@@ -23,6 +23,9 @@
     <string name="m">m</string>
     <string name="wind_info_button">Wind info</string>
     <string name="temperature">Temperature</string>
+    <string name="timer"> 00:00:31</string>
+    <string name="stop_button">stop button</string>
+    <string name="pause_button">pause button</string>
 
 
 </resources>
