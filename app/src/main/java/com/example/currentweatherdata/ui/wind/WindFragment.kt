@@ -19,4 +19,8 @@ class WindFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_wind, container, false)
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
 }

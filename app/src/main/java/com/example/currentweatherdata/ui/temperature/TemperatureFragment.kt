@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.currentweatherdata.databinding.FragmentTemperatureBinding
 import com.example.currentweatherdata.models.network.WeatherResponse
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint // Si no se agrega esta anotación, la app se cerrará al intentar ir al fragmento
 class TemperatureFragment : Fragment() {
 
     private var _binding: FragmentTemperatureBinding? = null
@@ -18,7 +20,8 @@ class TemperatureFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+
         _binding = FragmentTemperatureBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -28,12 +31,7 @@ class TemperatureFragment : Fragment() {
 
         viewModel.weatherData.observe(viewLifecycleOwner, this::updateWeather)
 
-        viewModel.getWeatherInfo("Cupertino")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        viewModel.getWeatherInfo("cupertino")
     }
 
     private fun updateWeather(weatherResponse: WeatherResponse) {
@@ -46,8 +44,12 @@ class TemperatureFragment : Fragment() {
         binding.cityName.text = cityName
         binding.currentTemperature.text = temperature.toString()
         binding.weatherDescription.text = description
-        binding.max.text = tempMax.toString()
-        binding.min.text = tempMin.toString()
+        binding.max.text = "H: $tempMax°"
+        binding.min.text = "L: $tempMin°"
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
-

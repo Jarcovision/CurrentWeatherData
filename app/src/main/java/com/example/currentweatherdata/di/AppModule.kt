@@ -18,7 +18,7 @@ private const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-    private const val REQUEST_TIMEOUT: Long = 120000
+   /* private const val REQUEST_TIMEOUT: Long = 120000
 
     @Singleton
     @Provides
@@ -31,16 +31,16 @@ object AppModule {
             .readTimeout(REQUEST_TIMEOUT, TimeUnit.MILLISECONDS)
         httpClient.addInterceptor(logging)
         return httpClient.build()
-    }
+    }*/
 
     @Singleton
     @Provides
     fun provideRetrofit(
-        okHttpClient: OkHttpClient
+        // okHttpClient: OkHttpClient
     ) = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
-        .client(okHttpClient)
+      //  .client(okHttpClient)
         .build()
 
 
