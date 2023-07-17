@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import com.example.currentweatherdata.databinding.FragmentTemperatureBinding
 import com.example.currentweatherdata.models.network.WeatherResponse
 

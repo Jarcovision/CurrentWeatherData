@@ -18,8 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -29,23 +28,30 @@
         app:layout_constraintEnd_toEndOf="@id/wind_speed"
         app:layout_constraintTop_toBottomOf="@+id/wind_speed">
 
+        <ImageView
+            android:id="@+id/wind_speed_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/baseline_speed_24" />
 
         <TextView
             android:id="@+id/wind_speed_unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingEnd="20dp"
+            android:paddingStart="@dimen/padding"
+            android:paddingEnd="@dimen/padding"
             android:text="@string/speed"
             android:textSize="@dimen/wind_speed"
             android:textStyle="bold"
 
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="@dimen/margin"/>
         <!--<Spinner
             android:id="@+id/planets_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@+id/dropdown_menu"/>-->
     </LinearLayout>
+
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_avg_speed"
@@ -82,7 +88,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/avg_seed_value"
                 android:textSize="@dimen/card_value_text_size"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:paddingTop="@dimen/padding"
+                android:paddingBottom="@dimen/padding"/>
 
             <TextView
                 android:id="@+id/avg_speed_unit"
@@ -130,7 +138,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/distance_value"
                 android:textSize="@dimen/card_value_text_size"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:paddingTop="@dimen/padding"
+                android:paddingBottom="@dimen/padding"/>
 
             <TextView
                 android:id="@+id/distance_unit"
@@ -150,6 +160,7 @@
 
         app:cardElevation="@dimen/card_elevation"
         android:backgroundTint="@color/white"
+
 
         app:layout_constraintBottom_toBottomOf="@+id/card_distance"
         app:layout_constraintEnd_toEndOf="parent"
@@ -176,7 +187,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/elevation_value"
                 android:textSize="@dimen/card_value_text_size"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:paddingTop="@dimen/padding"
+                android:paddingBottom="@dimen/padding"/>
 
             <TextView
                 android:id="@+id/elevation_unit"
@@ -225,6 +238,8 @@
                 android:text="@string/max_speed_value"
                 android:textSize="@dimen/card_value_text_size"
                 android:textStyle="bold"
+                android:paddingTop="@dimen/padding"
+                android:paddingBottom="@dimen/padding"
                 />
 
             <TextView
@@ -264,17 +279,17 @@
                 android:textColor="@color/white"
                 android:text="@string/alert_button"
                 android:textSize="@dimen/text_size"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:paddingTop="@dimen/padding"
+                android:paddingBottom="@dimen/padding"
 
-            <TextView
+                android:layout_marginTop="-20dp" />
+
+            <ImageView
                 android:id="@+id/alert_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="Alert Icon"
-
-                android:gravity="center"
-                />
+                android:layout_width="78dp"
+                android:layout_height="51dp"
+                app:srcCompat="@drawable/alert_24" />
 
             <TextView
                 android:id="@+id/alert_unit"
@@ -283,9 +298,13 @@
                 android:textColor="@color/white"
                 android:text="@string/none"
                 android:textSize="@dimen/text_size"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
 
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

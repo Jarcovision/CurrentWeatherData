@@ -11,4 +11,17 @@
     <dimen name="wind_speed_value_text_size">150sp</dimen>
     <dimen name="wind_speed_top_padding">30dp</dimen>
     <dimen name="wind_speed">20sp</dimen>
+    <dimen name="button_text_Size">30sp</dimen>
+    <dimen name="padding">15dp</dimen>
+    <dimen name="margin">15dp</dimen>
 </resources>
+
+
+<com.google.android.material.card.MaterialCardView
+android:id="@+id/card_elevation"
+app:cardCornerRadius="@dimen/card_corner_radius"
+android:layout_width="@dimen/card_size"
+android:layout_height="@dimen/card_size"
+
+app:cardElevation="@dimen/card_elevation"
+android:backgroundTint="@color/white">

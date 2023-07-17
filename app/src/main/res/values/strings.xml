@@ -21,6 +21,8 @@
     <string name="speed">km/h</string>
     <string name="km">km</string>
     <string name="m">m</string>
+    <string name="wind_info_button">Wind info</string>
+    <string name="temperature">Temperature</string>
 
 
 </resources>
