@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 
 }
 
@@ -21,6 +22,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
 
     buildTypes {
@@ -59,15 +61,17 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
 
     // LiveData
-   // implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1"
 
-    // Room
-   /* implementation 'androidx.room:room-runtime:2.4.0'
-    implementation 'androidx.room:room-ktx:2.4.0'
-    kapt 'androidx.room:room-compiler:2.4.0'*/
-
     // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+
+    // DaggerHilt
+    implementation 'com.google.dagger:hilt-android:2.44'
+    kapt 'com.google.dagger:hilt-compiler:2.44'
+
+    // OkHTTP
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
+
 }

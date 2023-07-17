@@ -2,4 +2,13 @@
 <resources>
     <dimen name="card_size">120dp</dimen>
     <dimen name="card_corner_radius">10dp</dimen>
+    <dimen name="card_elevation">10dp</dimen>
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_value_text_size">30sp</dimen>
+
+    <dimen name="text_size">15sp</dimen>
+
+    <dimen name="wind_speed_value_text_size">150sp</dimen>
+    <dimen name="wind_speed_top_padding">30dp</dimen>
+    <dimen name="wind_speed">20sp</dimen>
 </resources>

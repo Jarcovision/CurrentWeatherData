@@ -1,6 +1,26 @@
 <resources>
-    <string name="app_name">CurrentWeatherData</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Current Weather Data</string>
+
+    <string name="wind_speed">32.5</string>
+
+    <string name="avg_seed_value">28.5</string>
+    <string name="avg_speed">AVG speed</string>
+
+    <string name="distance">Distance</string>
+    <string name="distance_value">45.23</string>
+
+    <string name="elevation">Elevation</string>
+    <string name="elevation_value">11.48</string>
+
+    <string name="max_speed">Max Speed</string>
+    <string name="max_speed_value">41.75</string>
+
+    <string name="alert_button">Alert button</string>
+    <string name="none">-</string>
+
+    <string name="speed">km/h</string>
+    <string name="km">km</string>
+    <string name="m">m</string>
+
 
 </resources>

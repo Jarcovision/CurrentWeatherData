@@ -6,9 +6,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.currentweatherdata.models.network.WeatherResponse
 import com.example.currentweatherdata.repository.WeatherRepository
+import com.example.currentweatherdata.repository.WeatherRepositoryImpl
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class TemperatureViewModel(private val repository: WeatherRepository) : ViewModel() {
+@HiltViewModel
+class TemperatureViewModel
+@Inject constructor(private val repository: WeatherRepositoryImpl) : ViewModel() {
 
     private val apiKey = "97e0e9d2cdbe30acc28a54f5007f97ba"
 

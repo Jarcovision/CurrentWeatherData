@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.currentweatherdata.databinding.FragmentTemperatureBinding
+import com.example.currentweatherdata.models.network.WeatherResponse
 
 class TemperatureFragment : Fragment() {
 
@@ -26,25 +27,28 @@ class TemperatureFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.weatherData.observe(viewLifecycleOwner, Observer { weatherResponse ->
-            val cityName = weatherResponse.cityName
-            val temperature = weatherResponse.temp
-            val description = weatherResponse.description
-            val tempMax = weatherResponse.tempMax
-            val tempMin = weatherResponse.tempMin
+        viewModel.weatherData.observe(viewLifecycleOwner, this::updateWeather)
 
-            binding.cityName.text = cityName
-            binding.currentTemperature.text = temperature.toString()
-            binding.weatherDescription.text = description
-            binding.max.text = tempMax.toString()
-            binding.min.text = tempMin.toString()
-        })
-
-        viewModel.getWeatherInfo("City Name")
+        viewModel.getWeatherInfo("Cupertino")
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+    private fun updateWeather(weatherResponse: WeatherResponse) {
+        val cityName = weatherResponse.cityName
+        val temperature = weatherResponse.temp
+        val description = weatherResponse.description
+        val tempMax = weatherResponse.tempMax
+        val tempMin = weatherResponse.tempMin
+
+        binding.cityName.text = cityName
+        binding.currentTemperature.text = temperature.toString()
+        binding.weatherDescription.text = description
+        binding.max.text = tempMax.toString()
+        binding.min.text = tempMin.toString()
+    }
 }
+

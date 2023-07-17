@@ -7,35 +7,39 @@
     tools:context=".ui.wind.WindFragment">
 
     <TextView
-        android:id="@+id/velocity"
+        android:id="@+id/wind_speed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="bottom|center"
-        android:paddingTop="30dp"
-        android:text="32.5"
-        android:textSize="150dp"
+        android:paddingTop="@dimen/wind_speed_top_padding"
+        android:text="@string/wind_speed"
+        android:textSize="@dimen/wind_speed_value_text_size"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@id/velocity"
-        app:layout_constraintTop_toBottomOf="@+id/velocity">
+        app:layout_constraintEnd_toEndOf="@id/wind_speed"
+        app:layout_constraintTop_toBottomOf="@+id/wind_speed">
 
 
         <TextView
-            android:id="@+id/dropdown_menu"
+            android:id="@+id/wind_speed_unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingEnd="20dp"
-            android:text="km/h"
-            android:textSize="15sp" />
+            android:text="@string/speed"
+            android:textSize="@dimen/wind_speed"
+            android:textStyle="bold"
+
+            android:layout_marginBottom="20dp"/>
         <!--<Spinner
             android:id="@+id/planets_spinner"
             android:layout_width="match_parent"
@@ -45,14 +49,15 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_avg_speed"
+        app:cardCornerRadius="@dimen/card_corner_radius"
         android:layout_width="@dimen/card_size"
         android:layout_height="@dimen/card_size"
-        app:cardCornerRadius="@dimen/card_corner_radius"
 
-        app:cardElevation="30dp"
+        app:cardElevation="@dimen/card_elevation"
+        android:backgroundTint="@color/white"
 
         app:layout_constraintEnd_toStartOf="@+id/card_distance"
-        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
@@ -66,23 +71,26 @@
                 android:id="@+id/avg_speed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="AVG speed"
-
+                android:text="@string/avg_speed"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
                 />
 
             <TextView
                 android:id="@+id/avg_speed_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="28.5"
-                android:textSize="40dp"
+                android:text="@string/avg_seed_value"
+                android:textSize="@dimen/card_value_text_size"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/avg_speed_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="km/h" />
+                android:text="@string/speed"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -91,6 +99,12 @@
         app:cardCornerRadius="@dimen/card_corner_radius"
         android:layout_width="@dimen/card_size"
         android:layout_height="@dimen/card_size"
+
+        app:cardElevation="@dimen/card_elevation"
+        android:backgroundTint="@color/white"
+
+        android:layout_marginStart="@dimen/card_margin"
+        android:layout_marginEnd="@dimen/card_margin"
         app:layout_constraintBottom_toBottomOf="@+id/card_avg_speed"
         app:layout_constraintEnd_toStartOf="@+id/card_elevation"
         app:layout_constraintStart_toEndOf="@+id/card_avg_speed"
@@ -106,21 +120,25 @@
                 android:id="@+id/distance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Distance" />
+                android:text="@string/distance"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/distance_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="45.23"
-                android:textSize="40dp"
+                android:text="@string/distance_value"
+                android:textSize="@dimen/card_value_text_size"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/distance_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="km" />
+                android:text="@string/km"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -129,6 +147,10 @@
         app:cardCornerRadius="@dimen/card_corner_radius"
         android:layout_width="@dimen/card_size"
         android:layout_height="@dimen/card_size"
+
+        app:cardElevation="@dimen/card_elevation"
+        android:backgroundTint="@color/white"
+
         app:layout_constraintBottom_toBottomOf="@+id/card_distance"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/card_distance"
@@ -144,21 +166,25 @@
                 android:id="@+id/elevation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Elevation" />
+                android:text="@string/elevation"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/elevation_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="11.48"
-                android:textSize="40dp"
+                android:text="@string/elevation_value"
+                android:textSize="@dimen/card_value_text_size"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/elevation_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="m" />
+                android:text="@string/m"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -167,7 +193,11 @@
         app:cardCornerRadius="@dimen/card_corner_radius"
         android:layout_width="@dimen/card_size"
         android:layout_height="@dimen/card_size"
-        android:layout_marginTop="44dp"
+
+        app:cardElevation="@dimen/card_elevation"
+        android:backgroundTint="@color/white"
+
+        android:layout_marginTop="@dimen/card_margin"
         app:layout_constraintEnd_toStartOf="@+id/card_alert_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -184,14 +214,16 @@
                 android:id="@+id/max_speed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Max Speed" />
+                android:text="@string/max_speed"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/speed"
+                android:id="@+id/max_speed_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="41.75"
-                android:textSize="40dp"
+                android:text="@string/max_speed_value"
+                android:textSize="@dimen/card_value_text_size"
                 android:textStyle="bold"
                 />
 
@@ -199,7 +231,9 @@
                 android:id="@+id/speed_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="km/h" />
+                android:text="@string/speed"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -208,9 +242,12 @@
         app:cardCornerRadius="@dimen/card_corner_radius"
         android:layout_width="@dimen/card_size"
         android:layout_height="@dimen/card_size"
-        android:layout_marginStart="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
+
+        app:cardElevation="@dimen/card_elevation"
         android:backgroundTint="@color/alert"
+
+        android:layout_marginStart="@dimen/card_margin"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/card_max_speed"
         app:layout_constraintTop_toTopOf="@+id/card_max_speed">
 
@@ -225,7 +262,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="Alert button" />
+                android:text="@string/alert_button"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/alert_icon"
@@ -233,14 +272,18 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:text="Alert Icon"
-                android:gravity="center"/>
+
+                android:gravity="center"
+                />
 
             <TextView
                 android:id="@+id/alert_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="-" />
+                android:text="@string/none"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
