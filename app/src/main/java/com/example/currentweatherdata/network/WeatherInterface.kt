@@ -8,6 +8,7 @@ import retrofit2.create
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+// TODO sacar response de retrofit
 interface WeatherInterface {
     @GET("weather")
     suspend fun getCurrentWeather(

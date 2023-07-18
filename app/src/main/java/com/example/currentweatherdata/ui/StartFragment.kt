@@ -9,9 +9,10 @@ import androidx.navigation.fragment.findNavController
 import com.example.currentweatherdata.R
 import com.example.currentweatherdata.databinding.FragmentStartBinding
 
-
+// TODO: Saca data binding
 class StartFragment : Fragment() {
 
+    // TODO: Revisar View Binding
     private var binding: FragmentStartBinding? = null
 
     override fun onCreateView(

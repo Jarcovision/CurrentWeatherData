@@ -1,6 +1,7 @@
 package com.example.currentweatherdata.ui.temperature
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -34,6 +35,9 @@ class TemperatureFragment : Fragment() {
         viewModel.getWeatherInfo("cupertino")
     }
 
+    // TODO: el modelo de network no puede llegar a la UI, crear uno de dominio
+    // TODO: No usar variables
+    // TODO: Usar scope functions
     private fun updateWeather(weatherResponse: WeatherResponse) {
         val cityName = weatherResponse.cityName
         val temperature = weatherResponse.temp
@@ -44,6 +48,7 @@ class TemperatureFragment : Fragment() {
         binding.cityName.text = cityName
         binding.currentTemperature.text = temperature.toString()
         binding.weatherDescription.text = description
+        // TODO: Usar strings de resources
         binding.max.text = "H: $tempMax°"
         binding.min.text = "L: $tempMin°"
     }
