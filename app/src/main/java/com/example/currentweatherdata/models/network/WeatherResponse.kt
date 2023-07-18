@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 /**
  * TODO: Falta el icono. Borrar código comnetado.
+ * TODO: Obtener todo el response.
  */
 data class WeatherResponse(
     @SerializedName("name") val cityName: String?,
